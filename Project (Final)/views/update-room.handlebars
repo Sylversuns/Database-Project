@@ -1,0 +1,39 @@
+<!--From Instructor Sample-->
+<html>
+
+  <head>
+  </head>
+
+  <body>
+
+    <h3>Update Room {{rooms.id}}:</h3>
+
+    <form id="update-room" action="/room" method="post">
+	
+	<p>Style: <input type="text" name="style" value="{{rooms.style}}"></p>
+	<p>Floor: <input type="text" name="floor" value="{{rooms.floor}}"></p>
+	
+	<p>Location:<select name="location_id" selected="{{rooms.locationname}}" id="location-selector">
+	<option value="{{rooms.location_id}}">{{rooms.locationname}}</option>
+        
+		{{#each locations}}
+        	  <option value="{{location_id}}">{{name}}</option>
+        	{{/each}}
+        
+	</select></p>
+
+	<p>Manager:<select name="manager_id" selected="{{rooms.managername}}" id="manager-selector">
+        
+		<option value="{{rooms.manager_id}}">{{rooms.managername}}</option>
+		{{#each managers}}
+        	  <option value="{{manager_id}}">{{managername}}</option>
+        	{{/each}}
+        
+	</select></p>
+
+    </form>
+    <button onclick="updateRoom({{rooms.room_id}})">Update</button>
+
+  </body>
+
+</html>

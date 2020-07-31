@@ -1,0 +1,30 @@
+<!--From Instructor Sample-->
+<html>
+
+  <head>
+
+    <title>CS340 Project</title>
+    <link rel="stylesheet" href="/style.css">
+
+  </head>
+
+  <body>
+
+    <h3>Update {{customers.firstname}} {{customers.lastname}}:</h3>
+
+    <form id="update-customer" action="/customer" method="post">
+	<p>First Name: <input type="text" name="firstname" value="{{customers.firstname}}"></p>
+	<p>Last Name: <input type="text" name="lastname" value="{{customers.lastname}}"></p>
+	<p>Credit Card Number: <input type="text" name="ccnumber" value="{{customers.ccnumber}}"></p>
+	<p>Room:<select name="roomnumber" selected="{{customers.roomnumber}}" id="room-selector">
+	<option value="{{customers.roomnumber}}">{{customers.roomnumber}}</option>
+        {{#each rooms}}
+          <option value="{{id}}">{{id}}</option>
+        {{/each}}
+        </select></p>
+    </form>
+    <button onclick="updateCustomer({{customers.id}})">Update</button>
+
+  </body>
+
+</html>

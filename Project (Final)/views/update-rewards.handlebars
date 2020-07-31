@@ -1,0 +1,23 @@
+<!--From Instructor Sample-->
+<html>
+
+  <head>
+
+    <title>CS340 Project</title>
+    <link rel="stylesheet" href="/style.css">
+
+  </head>
+
+  <body>
+
+    <h3>Update {{rewards.name}} Program:</h3>
+
+    <form id="update-rewards" action="/rewards" method="post">
+	<p>Name: <input type="text" name="name" value="{{rewards.name}}"></p>
+	<p>Discount: <input type="text" name="discount" value="{{rewards.discount}}"></p>
+    </form>
+    <button onclick="updateRewards({{rewards.id}})">Update</button>
+
+  </body>
+
+</html>

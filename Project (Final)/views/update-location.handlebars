@@ -1,0 +1,23 @@
+<!--From Instructor Sample-->
+<html>
+
+  <head>
+
+    <title>CS340 Project</title>
+    <link rel="stylesheet" href="/style.css">
+
+  </head>
+
+  <body>
+
+    <h3>Update {{locations.name}}:</h3>
+
+    <form id="update-location" action="/location" method="post">
+	<p>Name: <input type="text" name="name" value="{{locations.name}}"></p>
+	<p>City: <input type="text" name="city" value="{{locations.city}}"></p>
+    </form>
+    <button onclick="updateLocation({{locations.id}})">Update</button>
+
+  </body>
+
+</html>

@@ -1,0 +1,36 @@
+<!--From Instructor Sample-->
+<html>
+
+  <head>
+  </head>
+
+  <body>
+
+    <h3>Update Relationship:</h3>
+
+    <form id="update-customerrewards" action="/customerrewards" method="post">
+	
+	<p>Customer:<select name="customer_id" id="customer-selector">
+		<option value="{{customerrewards.cid}}">{{customerrewards.fullname}}</option>
+        
+		{{#each customers}}
+        	  <option value="{{customer_id}}">{{customername}}</option>
+        	{{/each}}
+        
+	</select></p>
+
+	<p>Rewards Program:<select name="rewards_id" id="rewards-selector">
+        
+		<option value="{{customerrewards.rid}}">{{customerrewards.name}}</option>
+		{{#each rewards}}
+        	  <option value="{{rewards_id}}">{{name}}</option>
+        	{{/each}}
+        
+	</select></p>
+
+    </form>
+    <button onclick="updateCustomerRewards({{customerrewards.cid}},{{customerrewards.rid}})">Update</button>
+
+  </body>
+
+</html>

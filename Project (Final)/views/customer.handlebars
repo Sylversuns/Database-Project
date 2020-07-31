@@ -1,0 +1,52 @@
+<!--From Instructor Sample-->
+<html>
+
+  <head>
+
+    <title>CS340 Project</title>
+    <link rel="stylesheet" href="/style.css">
+
+  </head>
+
+  <body>
+
+    <h3>Add New Customers:</h3>
+
+    <form id="addcustomer" action="/customer" method="post">
+      <p>First Name: <input type="text" name="firstname"></p>
+      <p>Last Name: <input type="text" name="lastname"></p>
+      <p>Credit Card Number: <input type="text" name="ccnumber"></p>
+      <p>Room:<select name="roomnumber">
+	{{#each rooms}}
+          <option value="{{id}}">{{id}}</option>
+	{{/each}}
+        </select></p>
+      <input type="submit" value="Submit">
+    </form>
+
+    <h3>Current Customers:</h3>
+    <table>
+      
+      <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Credit Card Number</td>
+        <td>Room</td>
+      </tr>
+
+	{{#each customers}}
+      <tr>
+        <td>{{firstname}}</td>
+        <td>{{lastname}}</td>
+        <td>{{ccnumber}}</td>
+        <td>{{roomnumber}}</td>
+        <td><button onclick="deleteCustomer({{id}})">Delete</button></td>
+        <td><a href="/customer/{{id}}">Update</a></td>
+      </tr>
+	{{/each}}
+
+    </table>
+
+  </body>
+
+</html>

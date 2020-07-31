@@ -1,0 +1,23 @@
+<!--From Instructor Sample-->
+<html>
+
+  <head>
+
+    <title>CS340 Project</title>
+    <link rel="stylesheet" href="/style.css">
+
+  </head>
+
+  <body>
+
+    <h3>Update {{managers.firstname}} {{managers.lastname}}:</h3>
+
+    <form id="update-manager" action="/manager" method="post">
+	<p>First Name: <input type="text" name="firstname" value="{{managers.firstname}}"></p>
+	<p>Last Name: <input type="text" name="lastname" value="{{managers.lastname}}"></p>
+    </form>
+    <button onclick="updateManager({{managers.id}})">Update</button>
+
+  </body>
+
+</html>

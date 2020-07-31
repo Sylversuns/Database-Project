@@ -1,0 +1,42 @@
+<!--From Instructor Sample-->
+<html>
+
+  <head>
+
+    <title>CS340 Project</title>
+    <link rel="stylesheet" href="/style.css">
+
+  </head>
+
+  <body>
+
+    <h3>Add New Location:</h3>
+
+    <form id="addlocation" action="/location" method="post">
+      <p>Name: <input type="text" name="name"></p>
+      <p>City: <input type="text" name="city"></p>
+      <input type="submit" value="Submit">
+    </form>
+
+    <h3>Current Locations:</h3>
+    <table>
+      
+      <tr>
+        <td>Name</td>
+        <td>City</td>
+      </tr>
+
+	{{#each locations}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{city}}</td>
+        <td><button onclick="deleteLocation({{id}})">Delete</button></td>
+        <td><a href="/location/{{id}}">Update</a></td>
+      </tr>
+	{{/each}}
+
+    </table>
+
+  </body>
+
+</html>

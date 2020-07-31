@@ -1,0 +1,50 @@
+<!--From Instructor Sample-->
+<html>
+
+  <head>
+
+    <title>CS340 Project</title>
+    <link rel="stylesheet" href="/style.css">
+
+  </head>
+
+  <body>
+
+    <h3>Add New Customer/Rewards Relationship:</h3>
+
+    <form id="addcustomerrewards" action="/customerrewards" method="post">
+      <p>Customer Name:<select name="customer_id">
+	{{#each customers}}
+          <option value="{{customer_id}}">{{customername}}</option>
+	{{/each}}
+        </select></p>
+      <p>Rewards Program:<select name="rewards_id">
+        {{#each rewards}}
+          <option value="{{rewards_id}}">{{name}}</option>
+        {{/each}}
+        </select></p>
+      <input type="submit" value="Submit">
+    </form>
+
+    <h3>Current Customer/Rewards Program Relationships:</h3>
+    <table>
+      
+      <tr>
+        <td>Customer</td>
+        <td>Rewards Program</td>
+      </tr>
+
+	{{#each customerrewards}}
+      <tr>
+        <td>{{fullname}}</td>
+        <td>{{name}}</td>
+        <td><button onclick="deleteCustomerRewards({{cid}}, {{rid}})">Delete</button></td>
+        <td><a href="/customerrewards/cid/{{cid}}/rid/{{rid}}">Update</a></td>
+      </tr>
+	{{/each}}
+
+    </table>
+
+  </body>
+
+</html>

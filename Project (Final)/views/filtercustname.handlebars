@@ -1,0 +1,12 @@
+<h3>Filter Customers by Last Name:</h3>
+
+    <form id="lastnamefilter" action="/filtercustname" method="get">
+      <p>Last Name:
+        <select name="lastname">
+	  {{#each customers}}
+          <option value="{{lastname}}">{{lastname}}</option>
+	  {{/each}}
+        </select>
+      </p>
+      <input type="submit" value="Submit">
+    </form>

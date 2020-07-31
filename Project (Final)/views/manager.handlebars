@@ -1,0 +1,42 @@
+<!--From Instructor Sample-->
+<html>
+
+  <head>
+
+    <title>CS340 Project</title>
+    <link rel="stylesheet" href="/style.css">
+
+  </head>
+
+  <body>
+
+    <h3>Add New Managers:</h3>
+
+    <form id="addmanager" action="/manager" method="post">
+      <p>First Name: <input type="text" name="firstname"></p>
+      <p>Last Name: <input type="text" name="lastname"></p>
+      <input type="submit" value="Submit">
+    </form>
+
+    <h3>Current Managers:</h3>
+    <table>
+      
+      <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+      </tr>
+
+	{{#each managers}}
+      <tr>
+        <td>{{firstname}}</td>
+        <td>{{lastname}}</td>
+        <td><button onclick="deleteManager({{id}})">Delete</button></td>
+        <td><a href="/manager/{{id}}">Update</a></td>
+      </tr>
+	{{/each}}
+
+    </table>
+
+  </body>
+
+</html>

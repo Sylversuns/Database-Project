@@ -1,0 +1,56 @@
+<!--From Instructor Sample-->
+<html>
+
+  <head>
+  </head>
+
+  <body>
+
+    <h3>Add New Rooms:</h3>
+
+    <form id="addroom" action="/room" method="post">
+
+      <p>Style: <input type="text" name="style"></p>
+      <p>Floor: <input type="text" name="floor"></p>
+
+      <p>Location:<select name="roomlocation">
+	{{#each locations}}
+          <option value="{{location_id}}">{{name}}</option>
+	{{/each}}
+        </select></p>
+
+      <p>Manager:<select name="roommanager">
+        {{#each managers}}
+          <option value="{{manager_id}}">{{managername}}</option>
+        {{/each}}
+        </select></p>
+
+      <input type="submit" value="Submit">
+    </form>
+
+    <h3>Current Rooms:</h3>
+    <table>
+      
+      <tr>
+        <td>Style</td>
+        <td>Floor</td>
+        <td>Location</td>
+        <td>Manager</td>
+      </tr>
+
+	{{#each rooms}}
+      <tr>
+        <td>{{style}}</td>
+        <td>{{floor}}</td>
+        <td>{{locationname}}</td>
+        <td>{{managername}}</td>
+        <td><button onclick="deleteRoom({{id}})">Delete</button></td>
+        <td><a href="/room/{{id}}">Update</a></td>
+      </tr>
+	{{/each}}
+
+    </table>
+
+  </body>
+
+</html>

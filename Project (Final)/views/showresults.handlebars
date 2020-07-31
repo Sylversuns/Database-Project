@@ -1,0 +1,20 @@
+    <h3>Results:</h3>
+    <table>
+
+      <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>CC Number</td>
+        <td>Room</td>
+      </tr>
+	
+	{{#each customer}}
+      <tr>
+        <td>{{firstname}}</td>
+        <td>{{lastname}}</td>
+        <td>{{ccnumber}}</td>
+        <td>{{roomnumber}}</td>
+      </tr>
+	{{/each}}
+
+    </table>

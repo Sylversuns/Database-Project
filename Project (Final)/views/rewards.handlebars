@@ -1,0 +1,42 @@
+<!--From Instructor Sample-->
+<html>
+
+  <head>
+
+    <title>CS340 Project</title>
+    <link rel="stylesheet" href="/style.css">
+
+  </head>
+
+  <body>
+
+    <h3>Add New Rewards Programs:</h3>
+
+    <form id="addrewards" action="/rewards" method="post">
+      <p>Name: <input type="text" name="name"></p>
+      <p>Discount: <input type="text" name="discount"></p>
+      <input type="submit" value="Submit">
+    </form>
+
+    <h3>Current Rewards Programs:</h3>
+    <table>
+      
+      <tr>
+        <td>Name</td>
+        <td>Discount</td>
+      </tr>
+
+	{{#each rewards}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{discount}}</td>
+        <td><button onclick="deleteRewards({{id}})">Delete</button></td>
+        <td><a href="/rewards/{{id}}">Update</a></td>
+      </tr>
+	{{/each}}
+
+    </table>
+
+  </body>
+
+</html>
